@@ -12,6 +12,8 @@ let IObserverable = {
         if (!fns || fns.length === 0) {
             return false;
         }
+        console.log(args)
+        console.log(fns)
         fns.forEach(fn => fn.apply(this, args))
     }
 }
@@ -24,15 +26,18 @@ let IObserver = {
     }
 };
 
-let Subject = {};
-Subject = Object.create(IObserverable)
+const total = 'total'
+function totalCalculator(data) {
+    console.log(data.reduce((a, b) => a + b, 0));
+}
 
-let Observer = {};
-Observer = Object.create(IObserver)
+//Create an observer and subscribe the subject with the specific event key and the callback function
+let Subject = Object.create(IObserverable)
+let Observer = Object.create(IObserver)
+Observer.addEventListener(Subject, total, totalCalculator);
 
-const interestedEvent = 'interestedEvent'
+//Notify observers which subscribes total event with data
+const data = [1, 2, 3];
+Subject.trigger(total, data)
 
-Observer.addEventListener(Subject, interestedEvent, (args) => {
-    console.log(JSON.stringify(args))
-})
-Subject.trigger(interestedEvent, [1, 2, 3])
+//Will print 6

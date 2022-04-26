@@ -1,58 +1,58 @@
 interface IObserver {
-    notify(...args: unknown[]): void
+    subscribe(key: string, observable: IObserverable): void;
+    notify(...args: unknown[]): void;
 }
 
 interface IObserverable {
-    subscribe(event: string, observer: IObserver): void
-    //unsubscribe(observer: IObserver): void
-    notify(...args: unknown[]): void
+    subscribe(event: string, observer: IObserver): void;
+    notify(...args: unknown[]): void;
 }
 
 class Subject implements IObserverable {
-    #observerables: {[key: string]:Array<IObserver>}
+    #observerables: { [key: string]: Array<IObserver> } = {};
 
-    constructor() {
-        this.#observerables = {};
-    }
-
-    subscribe(event: string, observer: IObserver) {
+    subscribe(event: string, observer: IObserver): void {
         if (!this.#observerables[event]) {
             this.#observerables[event] = [];
         }
-        this.#observerables[event].push(observer)
+        this.#observerables[event].push(observer);
     }
 
-    // unsubscribe(observer: IObserver) {
-    //     this.#observerables.delete(observer)
-    // }
-
-    notify(...args: unknown[]) {
+    notify(...args: unknown[]): void {
         let key = Array.prototype.shift.call(args),
             fns = this.#observerables[key];
+
         if (!fns || fns.length === 0) {
-            return false;
+            return;
         }
 
-        fns.forEach(observerable => observerable.notify(...args))
+        fns.forEach((observer: IObserver) => observer.notify(...args))
     }
 }
 
 class Observer implements IObserver {
-    #key: string
-    constructor(key: string, observable: IObserverable) {
-        this.#key = key;
+    constructor(private callback: (args: number[]) => void) {}
+
+    subscribe(key: string, observable: IObserverable): void {
         observable.subscribe(key, this)
     }
 
-    notify(...args: unknown[]) {
-        console.log(JSON.stringify(args))
+    notify(...args: number[]): void {
+        this.callback(args);
     }
 }
 
 
-const interestedEvent = 'interestedEvent'
+const total = 'total'
+const totalCalculator = (data: number[]) => console.log(data.reduce((a: number, b: number) => a + b, 0));
 
+//Create an observer and subscribe the subject with the specific event key and the callback function
 const subject = new Subject()
-const object1 = new Observer(interestedEvent, subject);
+const observer = new Observer(totalCalculator)
+observer.subscribe(total, subject);
 
-subject.notify(interestedEvent, [1, 2, 3])
+//Notify observers which subscribes total event with data
+const data = [1, 2, 3];
+subject.notify(total, ...data)
+
+//Will print 6
