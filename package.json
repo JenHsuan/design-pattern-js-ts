@@ -1,19 +1,15 @@
 {
-  "name": "design-pattern-js-ts",
+  "name": "type-script-practices",
   "version": "1.0.0",
-  "description": "* ClassA uses ClassB or an object of classB",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JenHsuan/design-pattern-js-ts.git"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc -p ./src -w"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/JenHsuan/design-pattern-js-ts/issues"
-  },
-  "homepage": "https://github.com/JenHsuan/design-pattern-js-ts#readme"
+  "dependencies": {
+    "@types/node": "^16.11.11"
+  }
 }

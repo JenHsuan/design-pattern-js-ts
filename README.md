@@ -1,5 +1,14 @@
 # Design pattern in JavaScript and TypeScript
 
+
+## Patterns
+
+## Usages
+* watch
+```
+tsc -p ./src -w
+```
+
 ## UML
 
 ### Association
