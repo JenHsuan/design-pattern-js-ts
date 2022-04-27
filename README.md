@@ -4,9 +4,9 @@
 ## Patterns
 
 ## Usages
-* watch
 ```
-tsc -p ./src -w
+npm install
+npm start
 ```
 
 ## UML

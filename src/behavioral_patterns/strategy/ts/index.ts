@@ -3,40 +3,27 @@ interface IStrategyConstructor {
     new (): IStrategy
 }
 
-interface IStrategy {
-    // A strategy Interface
-    requestToken(): void
-}
-
-class facbook implements IStrategy {
-    requestToken() {
-    }
-}
-
-class google implements IStrategy {
-    requestToken() {
-    }
-}
-
 class Client {
-    inject(strategy: IStrategyConstructor) {
+    request(strategy: IStrategyConstructor): IStrategy {
         return new strategy();
     }
 }
-// let util = {
-//     facebook: {
-//         requestToken: function () {
 
-//         }
-//     },
-//     google: {
-//         requestToken: function () {
+interface IStrategy {
+    // A strategy Interface
+    requestToken: () => void
+}
 
-//         }
-//     }
-// }
+class facebook implements IStrategy {
+    requestToken = () => console.log('retrieved the token from Facebook');
+}
+
+class google implements IStrategy {
+    requestToken = () => console.log('retrieved the token from Google');
+}
 
 let client = new Client();
-client.inject(facbook).requestToken();
-// util['facebook'].requestToken();
+client.request(facebook).requestToken();
+
+//will print: retrieved the token from Facebook
 

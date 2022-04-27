@@ -1,14 +1,13 @@
-let util = {
+let strategies = {
     facebook: {
-        requestToken: function () {
-
-        }
+        requestToken: () => console.log('retrieved the token from Facebook')
     },
     google: {
-        requestToken: function () {
-
-        }
+        requestToken: () => console.log('retrieved the token from Google')
     }
 }
 
-util['facebook'].requestToken();
+let Client = (type) => strategies[type].requestToken();
+Client('facebook');
+
+//will print: retrieved the token from Facebook
