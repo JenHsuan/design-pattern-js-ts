@@ -1,13 +1,22 @@
 # Design pattern in JavaScript and TypeScript
 
-
-## Patterns
-
 ## Usages
+
+* Compile the TypeScript files
+
 ```
 npm install
 npm start
 ```
+
+## Patterns
+
+* behavioral pattern
+  * [observer](src/behavioral_patterns/observer/readme.md)
+  * strategy
+* creational pattern
+  * builder
+  * singleton
 
 ## UML
 
