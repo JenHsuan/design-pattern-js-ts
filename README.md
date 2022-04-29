@@ -1,5 +1,13 @@
 # Design pattern in JavaScript and TypeScript
 
+There are some differences of using design patterns between JavaScript and TypeScript
+
+* JavaScript
+  * Parameters won't be restricted with the type but it may cause some issues if the functions didn't be implemented
+  * Use `closure` and unexposed variables instead of using the `private member `in `TypeScript `
+  * Append new methods with the `prototype` 
+* TypeScript
+
 ## Usages
 
 * Compile the TypeScript files

@@ -25,6 +25,7 @@ class Composite implements ICompositeComponent {
 
     detach(): void {
         if (this.referenceToParent) {
+            //Delete the reference from the parent
             this.referenceToParent.delete(this);
             this.referenceToParent = undefined;
         }
@@ -55,6 +56,7 @@ class Leaf implements ICompositeComponent {
     }
     detach(): void {
         if (this.referenceToParent) {
+            //Delete the reference from the parent
             this.referenceToParent.delete(this);
             this.referenceToParent = undefined;
         }
@@ -73,3 +75,24 @@ component1.attatch(leafB);
 component1.attatch(component2);
 component2.detach();
 component1.method();
+
+/* will print:
+name: component 1
+components:
+<ref *1> Leaf {
+  referenceToParent: Composite {
+    referenceToParent: undefined,
+    name: 'component 1',
+    components: [ [Circular *1], [Leaf] ]
+  },
+  name: 'leaf A'
+}
+<ref *1> Leaf {
+  referenceToParent: Composite {
+    referenceToParent: undefined,
+    name: 'component 1',
+    components: [ [Leaf], [Circular *1] ]
+  },
+  name: 'leaf B'
+}
+ */
