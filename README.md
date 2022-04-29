@@ -13,10 +13,12 @@ npm start
 
 * behavioral pattern
   * [observer](src/behavioral_patterns/observer/readme.md)
-  * strategy
+  * [strategy](src/behavioral_patterns/strategy/readme.md)
 * creational pattern
-  * builder
-  * singleton
+  * [builder](src/creational_patterns/builder/readme.md)
+  * [singleton](src/creational_patterns/singleton/readme.md)
+* structural pattern
+  * [composite](src/structural_patterns/composite/readme.md)
 
 ## UML
 

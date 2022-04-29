@@ -1,0 +1,17 @@
+# Composite pattern
+* Useful for the hierarchal management
+  * allow us to composite objects into a changeable tree structure
+  * allow us to represent individual entities(leaves) and groups of leaves as the same
+
+
+
+## Roles
+
+* Composite
+  * Can attatch and manage the ICompositeComponent list
+* Leaf
+
+
+
+[![](https://mermaid.ink/img/pako:eNrFU8tqwzAQ_BWhUwrxD4jgkqY9GHooNLe6h0Va2wI9jLQulNT_XtlO4jQkUEKhumiZnRmG1WrHpVfIBZcGYnzUUAewpWPpKB1QkvaOPWwnZOSwZ4SK7SZkOA4sChYpaFfPaMAKAzqJW_8CqaB7wTbetj5qwplmkRqvFnfsw2s1wwoJZPMD7kt3muLo9WdR5AC51I6CFcf-5oC-vd-SeoINEi6O_hftz0VABJTMfq86G9AF9umoVqvCEYYKJOb5fzzmcG2MTmbrtjVawrhqWZZfSi7YOkYv9UiatOMaZtnXFX5hW4M2lSeSeWdu1fnr-eo6YD2K-JJbDBa0Sv9qHHnJqUmmJRepVFhBZ6jkpesTtWsVED4pTT5wUYGJuOTQkX_9dJILCh0eSPvvuWf13777Oa0)](https://mermaid.live/edit#pako:eNrFU8tqwzAQ_BWhUwrxD4jgkqY9GHooNLe6h0Va2wI9jLQulNT_XtlO4jQkUEKhumiZnRmG1WrHpVfIBZcGYnzUUAewpWPpKB1QkvaOPWwnZOSwZ4SK7SZkOA4sChYpaFfPaMAKAzqJW_8CqaB7wTbetj5qwplmkRqvFnfsw2s1wwoJZPMD7kt3muLo9WdR5AC51I6CFcf-5oC-vd-SeoINEi6O_hftz0VABJTMfq86G9AF9umoVqvCEYYKJOb5fzzmcG2MTmbrtjVawrhqWZZfSi7YOkYv9UiatOMaZtnXFX5hW4M2lSeSeWdu1fnr-eo6YD2K-JJbDBa0Sv9qHHnJqUmmJRepVFhBZ6jkpesTtWsVED4pTT5wUYGJuOTQkX_9dJILCh0eSPvvuWf13777Oa0)
+
