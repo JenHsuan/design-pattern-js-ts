@@ -29,8 +29,10 @@ singleton1.addData(3, 'member 3');
 
 const singleton2 = new Singleton();
 singleton2.print();
+console.log(singleton1 === singleton2)
 /* will print:
  * |       1       |       member 1        |
  * |       2       |       member 2        |
  * |       3       |       member 3        |
+ * true
  */
